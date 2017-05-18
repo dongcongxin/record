@@ -4,10 +4,47 @@
   <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>全选和全不选</title>
-<script src="jquery.min.js"></script>
+<!--<script src="jquery.min.js"></script>-->
 </head>
 <body>
+<input type="button" value="全选" id="selects">
+<input type="button" value="全不选" id="TotaOption"><br/>
+<div id="forms">
+<input type="checkbox">语文<br/>
+<input type="checkbox">英语<br/>
+<input type="checkbox">数学<br/>
+<input type="checkbox">法语<br/>
+<input type="checkbox">德语<br/>
+</div>
 <script>
+/*
+  jQuery实现
+$(function(){
+	$("#select").click(function(){
+		$("input:checkbox").attr("checked","checked");
+	});
+	$("#TotaOption").click(function(){
+		$("input:checkbox").removeAttr("checked");
+	})
+})
+*/
+var 
+	selects =document.getElementById("selects"),
+    TotaOption = document.getElementById("TotaOption"),
+    oform = document.getElementById("forms"),
+    check = oform.getElementsByTagName("input");
+
+ 	 selects.onclick=function(){
+ 		for(var i =0;i<check.length;i++){
+ 			check[i].checked=true;
+ 		}
+	 }
+
+	 TotaOption.onclick=function(){
+ 		for(var i =0;i<check.length;i++){
+ 			check[i].checked=false;
+ 		}
+	}
 </script>
 </body>
 </html>
