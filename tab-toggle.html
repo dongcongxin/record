@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>选项卡tab</title>
+<script src="jquery.min.js"></script>
+<style type="text/css">
+*{
+	margin:0;
+	padding:0;
+}
+.content{
+	width:400px;
+	height:40px;
+	border:1px solid #ccc;
+	margin:60px auto;
+}
+.content .nav li{
+	float:left;
+	text-align: center;
+	line-height: 40px;
+	width:50px;
+	border:1px solid #ccc;
+}
+.content li,.container li{
+	list-style: none;
+}
+.content .nav li a{
+	text-decoration: none;
+	display: block;
+}
+.active{
+	background-color: yellow;
+	
+}
+.container{
+	clear: left;
+	width: 400px;
+	height: 100px;
+	border:1px solid #ccc;
+	overflow: hidden;
+}
+.container .text li{
+	width: 400px;
+	height: 400px;
+}
+</style>
+</head>
+<body>
+<div class="content" id="content">
+	<ul class="nav" id="nav">
+		<li class="active"><a href="#">首页</a></li>
+		<li><a href="#">语文</a></li>
+		<li><a href="#">数学</a></li>
+		<li><a href="#">英语</a></li>
+		<li><a href="#">法语</a></li>
+	</ul>
+	<div class="container">
+		<ul class="text" id="text">
+			<li style="display:block">这段文字0首页</li>
+			<li>这段文字1语文</li>
+			<li>这段文字2数学</li>
+			<li>这段文字3英语</li>
+			<li>这段文字4法语</li>
+		</ul>
+	</div>
+</div>
+<script>
+var content = document.getElementById('content');
+var nav     = document.getElementById("nav");
+var oli     = nav.getElementsByTagName("li"); 
+var otext   = document.getElementById("text");
+var ali     = otext.getElementsByTagName("li");
+for(var i = 0;i<oli.length;i++){
+     //为li指定索引
+      oli[i].id = i;
+	//为所有li绑定点击事件
+
+	oli[i].onclick=function(){
+		for(var j = 0;j<oli.length;j++){
+            oli[j].className="";
+            ali[j].style.display="none";
+
+		}
+		//当前为高亮显示
+		this.className="active";
+		ali[this.id].style="block";
+	}
+}
+</script>
+</body>
+</html>
