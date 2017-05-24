@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>getElementsByClass</title>
+  <script>
+  	function getElementsByClass(node,classname){
+  		if(node.getElementsByClass){
+  			return node.getElementsByClass(classname);
+  		}else{
+  			var results  = new Array();
+  			var elems = node.getElementsByTagName("*");
+  			for(var i = 0;i<elems.length;i++){
+  				if(elems[i].classname.indexOf!=-1){
+  					results[result.length] = elems[i];
+  				}
+  			}
+  			return results;
+  		}
+  	}
+  </script>
+</head>
+<body>
+
+</body>
+</html>
