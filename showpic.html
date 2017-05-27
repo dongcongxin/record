@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>showPic图片库</title>
+  <style type="text/css">
+  #RePicture img{
+    width:200px;
+    height:200px;
+  }
+  </style>
+</head>
+<body>
+<h2>这是一个图片库</h2>
+<ul>
+  <li><a href="1.jpg" onclick="showPic(this);op.innerHTML=this.innerHTML;return false">我好可爱呢</a></li>
+  <li><a href="2.jpg" onclick="showPic(this);op.innerHTML=this.innerHTML;return false">民国哭的表情包</a></li>
+  <li><a href="3.gif" onclick="showPic(this);op.innerHTML=this.innerHTML;return false">新新超人</a></li>
+  <li><a href="4.jpg"onclick="showPic(this);op.innerHTML=this.innerHTML;return false">月月唱歌</a></li>
+</ul>
+<div id="RePicture">
+  <img src="1.jpg">
+  <p id="tip">这是一张我好可爱呢的表情包</p>
+</div>
+<script>
+function showPic(index){
+   var RePicture = document.getElementById("RePicture");
+   var img       = RePicture.getElementsByTagName("img")[0];
+   img.setAttribute("src",index);
+}
+   var op= document.getElementById("tip");
+</script>
+</body>
+</html>
